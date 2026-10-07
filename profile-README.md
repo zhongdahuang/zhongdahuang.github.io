@@ -11,4 +11,4 @@ PhD student in Mathematics at UBC Okanagan. I study derivative-free and multi-fi
 
 Full list and teaching on my [homepage](https://zhongdahuang.github.io).
 
-[ORCID](https://orcid.org/0009-0005-7613-5838) · [Google Scholar](https://scholar.google.com/citations?user=bhUggisAAAAJ) · [GitHub](https://github.com/zhongdahuang)
+[ORCID](https://orcid.org/0009-0005-7613-5838) · [Google Scholar](https://scholar.google.com/citations?user=bhUggisAAAAJ) · [GitHub](https://github.com/zhongdahuang) · [LinkedIn](https://www.linkedin.com/in/zhongdahuang)
