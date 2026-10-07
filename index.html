@@ -78,6 +78,17 @@ ol.pubs li:hover { border-left-color: var(--warm); }
 .outside p { margin: 0; }
 
 .mcredit { display: none; }
+.tag { font: 500 11px/1 var(--sans); color: var(--warm); border: 1px solid var(--warm); border-radius: 999px;
+       padding: 2px 7px; margin-left: .45rem; vertical-align: 2px; white-space: nowrap; }
+details.abs { margin-top: .35rem; }
+details.abs summary { cursor: pointer; list-style: none; display: inline-block; font: 500 12.5px/1 var(--sans);
+       color: var(--muted); border: 1px dashed var(--rule); border-radius: 999px; padding: 3px 9px; }
+details.abs summary::-webkit-details-marker { display: none; }
+details.abs summary::after { content: " +"; }
+details.abs[open] summary::after { content: " −"; }
+details.abs summary:hover { color: var(--accent); border-color: var(--accent); }
+details.abs p { margin: .6rem 0 .2rem; font-size: .93rem; line-height: 1.6; color: var(--muted);
+       background: var(--panel); border-radius: 4px; padding: .7rem .9rem; }
 footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--rule); font: 13px/1.5 var(--sans); color: var(--muted); }
 
 @media (max-width: 860px) {
@@ -132,10 +143,10 @@ footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--rule);
 <section id="news">
   <h2>News</h2>
   <ul class="news">
-    <li><time>Jun 2026</time><span>Invited talk at the Third Derivative-Free Optimization Symposium (DFOS 2026), Université de Montréal.</span></li>
+    <li><time>Jun 2026</time><span>Invited talk: <i>Multi-fidelity warm-start optimization: theory and application</i>. Third Derivative-Free Optimization Symposium (DFOS 2026), Université de Montréal.</span></li>
     <li><time>May 2026</time><span>Published in <i>Engineering Optimization</i>: A multiobjective multifidelity optimization approach for the design of scanners for use in optical computed tomography imaging.</span></li>
-    <li><time>Oct 2025</time><span>Talk at the West Coast Optimization Meeting (WCOM Fall 2025), UBC Okanagan.</span></li>
-    <li><time>Jun 2025</time><span>Talk at the CORS 2025 Annual Conference, Edmonton.</span></li>
+    <li><time>Oct 2025</time><span>Talk: <i>A multiobjective multifidelity optimization approach for design of scanners for use in optical CT imaging</i>. West Coast Optimization Meeting (WCOM Fall 2025), UBC Okanagan.</span></li>
+    <li><time>Jun 2025</time><span>Talk: CORS 2025 Annual Conference, Edmonton.</span></li>
   </ul>
 </section>
 
@@ -157,30 +168,35 @@ footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--rule);
       Z. Huang, J. Ryga, A. Ogilvy, A. Ardestani-Jaafari, A. Jirasek, W. Hare.<br>
       <span class="meta"><i>Engineering Optimization</i>, 2026.</span>
       <span class="links"><a href="https://doi.org/10.1080/0305215x.2026.2671223">doi</a></span>
+      <details class="abs"><summary>Abstract</summary><p>Optical computed tomography scanners are powerful imaging tools used in three-dimensional radiation dosimetry to reconstruct dose distributions in gel dosimeters. Solid-tank scanners embed the gel in an acrylic block, replacing large fluid baths and simplifying setup. The solid-tank, fan-beam design is formulated as a multiobjective problem that balances imaging extent, uniformity and ray-crossover artifacts. A ray-tracing simulator is developed with new, objective-specific performance measures and a multifidelity setting controlled by ray count. To enable efficient search, the non-dominated sorting genetic algorithm (NSGA-II) is employed within a multifidelity framework that incrementally escalates simulation fidelity and uses the Pareto-optimal survivors from one fidelity stage to initialize the next stage. The authors&#x27; method illustrates the advantages of a multiobjective framework to reveal deeper insights into design trade-offs, avoid biased outcomes and support robust lens selection. Moreover, performance comparison indicates that the authors method achieves higher-quality solutions within a comparable runtime to the standard NSGA-II approach.</p></details>
     </li>
     <li>
       <span class="title">Preliminary commissioning of a prototype solid tank optical CT scanner for 3D radiation dosimetry.</span><br>
       A. Ogilvy, S. Collins, M. Guenter, D. Huang, W. Hare, M. Hilts, A. Jirasek.<br>
       <span class="meta"><i>Journal of Physics: Conference Series</i> 2630(1), 012036, 2023.</span>
       <span class="links"><a href="https://doi.org/10.1088/1742-6596/2630/1/012036">doi</a></span>
+      <details class="abs"><summary>Abstract</summary><p>Optical computed tomography (CT) is one of the leading modalities for imaging gel dosimeters. In previous research, it was shown that a design could significantly reduce the volume of the refractive index baths that are commonly found in optical CT systems. The proposed scanner has been manufactured and is in process of being commissioned. The rays refract through the system and their paths are estimated using a ray-tracing simulator. Reconstruction is preformed through algebraic reconstruction technique and iterated using the FISTA-TV algorithm. A Sylgard®184 edge phantom was created to commission the scanner’s spatial resolution. The scanner is capable of a 0.929 mm −1 spatial resolution, although the spatial resolution is highly dependent on the number of iterations, and method of processing the edge spread function.</p></details>
     </li>
     <li>
       <span class="title">Iterative image reconstruction with polar coordinate discretized system matrix for optical CT radiochromic gel dosimetry.</span><br>
       S. Collins, A. Ogilvy, D. Huang, W. Hare, M. Hilts, A. Jirasek.<br>
       <span class="meta"><i>Medical Physics</i> 50(10), 6334–6353, 2023.</span>
       <span class="links"><a href="https://doi.org/10.1002/mp.16459">doi</a></span>
+      <details class="abs"><summary>Abstract</summary><p>Gel dosimeters are a potential tool for measuring the complex dose distributions that characterize modern radiotherapy. A prototype tabletop solid‐tank fan‐beam optical CT scanner for readout of gel dosimeters was recently developed. This scanner does not have a straight raypath from source to detector, thus images cannot be reconstructed using filtered backprojection (FBP) and iterative techniques are required. Iterative image reconstruction requires a system matrix that describes the geometry of the imaging system. Stored system matrices can become immensely large, making them impractical for storage on a typical desktop computer. Here we develop a method to reduce the storage size of optical CT system matrices through use of polar coordinate discretization while accounting for the refraction in optical CT systems. A ray tracing simulator was developed to track the path of light rays as they traverse the different mediums of the optical CT scanner. Cartesian coordinate discretized system matrices (CCDSMs) and polar coordinate discretized system matrices (PCDSMs) were generated by discretizing the reconstruction area of the optical CT scanner into a Cartesian pixel grid and a polar coordinate pixel grid, respectively. The length of each ray through each pixel was calculated and used to populate the system matrices. To ensure equal weighting during iterative reconstruction, the radial rings of PCDSMs were asymmetrically spaced such that the area of each polar pixel was constant. Two clinical phantoms and several synthetic phantoms were produced and used to evaluate the reconstruction techniques under known conditions. Reconstructed images were analyzed in terms of spatial resolution, signal‐to‐noise ratio (SNR), contrast‐to‐noise ratio (CNR), signal nonuniformity (SNU), and Gamma map pass percentage. A storage size reduction of 99.72% was found when comparing a PCDSM to a CCDSM with the same total number of pixels. Images reconstructed with a PCDSM were found to have superior SNR, CNR, SNU, and Gamma (1 mm, 1%) pass percentage compared to those reconstructed with a CCDSM. Increasing spatial resolution in the radial direction with increasing radial distance was found in both PCDSM and CCDSM reconstructions due to the outer regions refracting light more severely. Images reconstructed with a PCDSM showed a decrease in spatial resolution in the azimuthal directions as radial distance increases, due to the widening of the polar pixels. However, this can be mitigated with only a slight increase in storage size by increasing the number of projections. A loss of spatial resolution in the radial direction within 5 mm radially from center was found when reconstructing with a PCDSM, due to the large innermost pixels. However, this was remedied by increasing the number of radial rings within the PCDSM, yielding radial spatial resolution on par with images reconstructed with a CCDSM and a storage size reduction of 99.26%. Discretizing the image pixel elements in polar coordinates achieved a system matrix storage size reduction of 99.26% with only minimal reduction in the image quality.</p></details>
     </li>
     <li>
       <span class="title">A Hybrid Direct Search and Model-Based Derivative-Free Optimization Method with Dynamic Decision Processing and Application in Solid-Tank Design.</span><br>
       Z. Huang, A. Ogilvy, S. Collins, W. Hare, M. Hilts, A. Jirasek.<br>
       <span class="meta"><i>Algorithms</i> 16(2), 92, 2023.</span>
       <span class="links"><a href="https://doi.org/10.3390/a16020092">doi</a></span>
+      <details class="abs"><summary>Abstract</summary><p>A derivative-free optimization (DFO) method is an optimization method that does not make use of derivative information in order to find the optimal solution. It is advantageous for solving real-world problems in which the only information available about the objective function is the output for a specific input. In this paper, we develop the framework for a DFO method called the DQL method. It is designed to be a versatile hybrid method capable of performing direct search, quadratic-model search, and line search all in the same method. We develop and test a series of different strategies within this framework. The benchmark results indicate that each of these strategies has distinct advantages and that there is no clear winner in the overall performance among efficiency and robustness. We develop the Smart DQL method by allowing the method to determine the optimal search strategies in various circumstances. The Smart DQL method is applied to a problem of solid-tank design for 3D radiation dosimetry provided by the UBCO (University of British Columbia—Okanagan) 3D Radiation Dosimetry Research Group. Given the limited evaluation budget, the Smart DQL method produces high-quality solutions.</p></details>
     </li>
     <li>
       <span class="title">The superconducting transition and mixed state of YBa<sub>2</sub>Cu<sub>3</sub>O<sub>6.95</sub>: an undergraduate experiment.</span><br>
       Z. Huang, Y. Tong, J. S. Bobowski.<br>
       <span class="meta"><i>European Journal of Physics</i> 43(2), 025501, 2022.</span>
       <span class="links"><a href="https://doi.org/10.1088/1361-6404/ac405f">doi</a></span>
+      <details class="abs"><summary>Abstract</summary><p>We describe a simple AC susceptometer built in-house that can be used to make high-resolution measurements of the magnetic susceptibility of high-temperature superconductors in an undergraduate physics lab. Our system, cooled using liquid nitrogen, can reach a base temperature of 77 K. Our apparatus does not require gas handling systems or PID temperature controllers. Instead, it makes use of a thermal circuit that is designed to allow the sample to cool on a time scale that is suitable for an undergraduate lab. Furthermore, the temperature drift rate at the superconducting transition temperature T c is low enough to allow for precise measurements of the complex magnetic susceptibility through T c , even for single-crystal samples with exceedingly sharp superconducting transitions. Using an electromagnet, we were able to apply static magnetic fields up to 63 mT at the sample site. By measuring the change in susceptibility as a function of the strength of an applied of static magnetic field, we were able to estimate the lower critical field H c1 of a single-crystal sample of optimally-doped YBa 2 Cu 3 O 6.95 at 77 K. We also investigated the mixed state of a sintered polycrystalline sample of YBa 2 Cu 3 O 6+ y .</p></details>
     </li>
   </ol>
 </section>
@@ -207,8 +223,25 @@ footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--rule);
 <section id="talks">
   <h2>Talks</h2>
   <ol class="pubs">
-    <li>Invited: Derivative-Free Optimization Symposium (DFOS), 2026; BIRS workshop on derivative-free optimization, 2022; CAIMS Annual Meeting, 2022.</li>
-    <li>Contributed: CORS Annual Conference, 2025; West Coast Optimization Meeting, 2025.</li>
+    <li>
+      <span class="title">Multi-fidelity warm-start optimization: theory and application.</span><span class="tag">invited</span><br>
+      <span class="meta">Third Derivative-Free Optimization Symposium (DFOS 2026), Université de Montréal, Jun 2026.</span>
+      <details class="abs"><summary>Abstract</summary><p>Optical computed tomography (CT) scanners are powerful imaging tools used in three-dimensional radiation dosimetry to reconstruct dose distributions in gel dosimeters. Solid-tank scanners embed the gel in an acrylic block, replacing large fluid baths and simplifying setup. We formulate solid-tank fan-beam design as a multiobjective problem balancing imaging extent, uniformity, and ray-crossover artifacts. We build a ray-tracing simulator with objective-specific performance measures and a multifidelity setting controlled by ray count. To search efficiently, we employ the Non-dominated Sorting Genetic Algorithm (NSGA-II-ws) within a multifidelity framework that incrementally escalates simulation fidelity and uses Pareto-optimal survivors from one level to initialize the next. Performance comparisons indicate that NSGA-II-ws achieves higher-quality solutions within comparable runtime to standard NSGA-II. Motivated by this framework, we develop a theoretical foundation for multi-fidelity warm-start optimization under smooth and strongly convex objectives. For the two-level setting, we establish iteration bounds quantifying how low-fidelity progress reduces high-fidelity complexity and characterize the optimal allocation of iterations between fidelity levels, including closed-form cost-minimizing splits. We extend the analysis to M-level hierarchies, formalizing when and why multi-fidelity warm-start strategies yield computational savings and providing guidance for designing provably efficient multi-fidelity optimization frameworks.</p></details>
+    </li>
+    <li>
+      <span class="title">A multiobjective multifidelity optimization approach for design of scanners for use in optical CT imaging.</span><br>
+      <span class="meta">West Coast Optimization Meeting (WCOM Fall 2025), UBC Okanagan, Oct 2025.</span>
+      <details class="abs"><summary>Abstract</summary><p>Optical computed tomography (CT) scanners are powerful imaging tools used in three dimensional radiation dosimetry to reconstruct dose distributions in gel dosimeters. Solid-tank scanners embed the gel in an acrylic block, replacing large fluid baths and simplifying setup. We formulate solid-tank, fan-beam design as a multiobjective problem balancing imaging extent, uniformity, and ray-crossover artifacts. We build a ray-tracing simulator with new, objective-specific performance measures and a multifidelity setting controlled by ray count. To search efficiently, we employ a warm-start Non-dominated Sorting Genetic Algorithm (NSGA-II-ws), which incrementally escalates simulation fidelity and uses the Pareto-optimal survivors from one fidelity stage to initialize the population at the next. Our method illustrates the advantages of a multiobjective framework to reveal deeper insights into design trade-offs, avoid biased outcomes, and support robust lens selection. Moreover, performance comparison indicates that the NSGA-II-ws method achieves higher-quality solutions within a comparable runtime to the standard NSGA-II approach.</p></details>
+    </li>
+    <li>
+      <span class="meta">CORS 2025 Annual Conference, Edmonton, Jun 2025.</span>
+    </li>
+    <li>
+      <span class="tag">invited</span><span class="meta">BIRS workshop on derivative-free optimization, 2022.</span>
+    </li>
+    <li>
+      <span class="tag">invited</span><span class="meta">CAIMS Annual Meeting, UBC Okanagan, 2022.</span>
+    </li>
   </ol>
 </section>
 
@@ -243,5 +276,18 @@ footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--rule);
 <footer><span class="mcredit">Header image: Detail of <a href="https://vincentslight.art/products/okanagan-lake-in-moonlight"><i>Okanagan Lake in Moonlight</i></a>, acrylic on canvas, by the author.</span>Last updated October 2026. Publications are drawn from <a href="https://orcid.org/0009-0005-7613-5838">ORCID</a>.</footer>
 </main>
 </div>
+<script>
+// 鼠标悬停在条目上时展开摘要，移开时收起；触屏设备点击 Abstract 展开。
+if (window.matchMedia("(hover: hover)").matches) {
+  document.querySelectorAll("ol.pubs li").forEach(li => {
+    const d = li.querySelector("details.abs");
+    if (!d) return;
+    let pinned = false;
+    d.querySelector("summary").addEventListener("click", ev => { ev.preventDefault(); pinned = !pinned; d.open = pinned; });
+    li.addEventListener("mouseenter", () => { d.open = true; });
+    li.addEventListener("mouseleave", () => { if (!pinned) d.open = false; });
+  });
+}
+</script>
 </body>
 </html>

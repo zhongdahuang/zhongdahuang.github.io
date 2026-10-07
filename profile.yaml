@@ -33,16 +33,10 @@ banner:
   alt: Detail of the painting Okanagan Lake in Moonlight
   credit: 'Detail of <a href="https://vincentslight.art/products/okanagan-lake-in-moonlight"><i>Okanagan Lake in Moonlight</i></a>, acrylic on canvas, by the author'
 
-# 近期动态：只写报告、获奖等；已发表的论文由脚本按 ORCID 自动加入（取发表年月）。
-# 新的写在最上面；date 写 YYYY-MM。显示最近 news_months 个月内的条目。
+# 近期动态：报告从下面的 talks 自动生成，已发表论文从 ORCID 自动生成；
+# 这里只写其他值得放的事（date 写 YYYY-MM）。显示最近 news_months 个月内的条目。
 news_months: 24
-news:
-  - date: 2026-06
-    text: Invited talk at the Third Derivative-Free Optimization Symposium (DFOS 2026), Université de Montréal.
-  - date: 2025-10
-    text: Talk at the West Coast Optimization Meeting (WCOM Fall 2025), UBC Okanagan.
-  - date: 2025-06
-    text: Talk at the CORS 2025 Annual Conference, Edmonton.
+news: []
 
 about: >-
   I am a PhD student in mathematics at UBC Okanagan, advised by Warren Hare and
@@ -115,9 +109,68 @@ awards:
   - Special UBC Okanagan Graduate Award, 2021.
   - Graduate Dean's Entrance Scholarship, 2020.
 
+# 报告：date 写 YYYY-MM-DD 或 YYYY-MM；title、abstract 可留空；invited: true 显示 invited 标记。
+# 这里的报告会自动进入 News（最近 news_months 个月内）。
 talks:
-  - "Invited: Derivative-Free Optimization Symposium (DFOS), 2026; BIRS workshop on derivative-free optimization, 2022; CAIMS Annual Meeting, 2022."
-  - "Contributed: CORS Annual Conference, 2025; West Coast Optimization Meeting, 2025."
+  - date: 2026-06-23
+    invited: true
+    title: "Multi-fidelity warm-start optimization: theory and application"
+    event: Third Derivative-Free Optimization Symposium (DFOS 2026)
+    place: Université de Montréal
+    abstract: >-
+      Optical computed tomography (CT) scanners are powerful imaging tools used in
+      three-dimensional radiation dosimetry to reconstruct dose distributions in gel
+      dosimeters. Solid-tank scanners embed the gel in an acrylic block, replacing large
+      fluid baths and simplifying setup. We formulate solid-tank fan-beam design as a
+      multiobjective problem balancing imaging extent, uniformity, and ray-crossover
+      artifacts. We build a ray-tracing simulator with objective-specific performance
+      measures and a multifidelity setting controlled by ray count. To search efficiently,
+      we employ the Non-dominated Sorting Genetic Algorithm (NSGA-II-ws) within a
+      multifidelity framework that incrementally escalates simulation fidelity and uses
+      Pareto-optimal survivors from one level to initialize the next. Performance
+      comparisons indicate that NSGA-II-ws achieves higher-quality solutions within
+      comparable runtime to standard NSGA-II.
+      Motivated by this framework, we develop a theoretical foundation for multi-fidelity
+      warm-start optimization under smooth and strongly convex objectives. For the
+      two-level setting, we establish iteration bounds quantifying how low-fidelity
+      progress reduces high-fidelity complexity and characterize the optimal allocation
+      of iterations between fidelity levels, including closed-form cost-minimizing splits.
+      We extend the analysis to M-level hierarchies, formalizing when and why
+      multi-fidelity warm-start strategies yield computational savings and providing
+      guidance for designing provably efficient multi-fidelity optimization frameworks.
+  - date: 2025-10-18
+    title: A multiobjective multifidelity optimization approach for design of scanners for use in optical CT imaging
+    event: West Coast Optimization Meeting (WCOM Fall 2025)
+    place: UBC Okanagan
+    abstract: >-
+      Optical computed tomography (CT) scanners are powerful imaging tools used in three
+      dimensional radiation dosimetry to reconstruct dose distributions in gel dosimeters.
+      Solid-tank scanners embed the gel in an acrylic block, replacing large fluid baths
+      and simplifying setup. We formulate solid-tank, fan-beam design as a multiobjective
+      problem balancing imaging extent, uniformity, and ray-crossover artifacts. We build
+      a ray-tracing simulator with new, objective-specific performance measures and a
+      multifidelity setting controlled by ray count. To search efficiently, we employ a
+      warm-start Non-dominated Sorting Genetic Algorithm (NSGA-II-ws), which incrementally
+      escalates simulation fidelity and uses the Pareto-optimal survivors from one fidelity
+      stage to initialize the population at the next. Our method illustrates the advantages
+      of a multiobjective framework to reveal deeper insights into design trade-offs, avoid
+      biased outcomes, and support robust lens selection. Moreover, performance comparison
+      indicates that the NSGA-II-ws method achieves higher-quality solutions within a
+      comparable runtime to the standard NSGA-II approach.
+  - date: 2025-06
+    title:        # 待补
+    event: CORS 2025 Annual Conference
+    place: Edmonton
+  - date: 2022
+    invited: true
+    title:        # 待补
+    event: BIRS workshop on derivative-free optimization
+    place:        # 待补
+  - date: 2022
+    invited: true
+    title:        # 待补
+    event: CAIMS Annual Meeting
+    place: UBC Okanagan
 
 outside:
   image: outside.jpg

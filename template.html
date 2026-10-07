@@ -79,6 +79,17 @@ ol.pubs li:hover { border-left-color: var(--warm); }
 .outside p { margin: 0; }
 
 .mcredit { display: none; }
+.tag { font: 500 11px/1 var(--sans); color: var(--warm); border: 1px solid var(--warm); border-radius: 999px;
+       padding: 2px 7px; margin-left: .45rem; vertical-align: 2px; white-space: nowrap; }
+details.abs { margin-top: .35rem; }
+details.abs summary { cursor: pointer; list-style: none; display: inline-block; font: 500 12.5px/1 var(--sans);
+       color: var(--muted); border: 1px dashed var(--rule); border-radius: 999px; padding: 3px 9px; }
+details.abs summary::-webkit-details-marker { display: none; }
+details.abs summary::after { content: " +"; }
+details.abs[open] summary::after { content: " −"; }
+details.abs summary:hover { color: var(--accent); border-color: var(--accent); }
+details.abs p { margin: .6rem 0 .2rem; font-size: .93rem; line-height: 1.6; color: var(--muted);
+       background: var(--panel); border-radius: 4px; padding: .7rem .9rem; }
 footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--rule); font: 13px/1.5 var(--sans); color: var(--muted); }
 
 @media (max-width: 860px) {
@@ -110,5 +121,18 @@ footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--rule);
 <footer><span class="mcredit">Header image: {{BANNER_CREDIT}}.</span>Last updated {{UPDATED}}. Publications are drawn from <a href="https://orcid.org/{{ORCID}}">ORCID</a>.</footer>
 </main>
 </div>
+<script>
+// 鼠标悬停在条目上时展开摘要，移开时收起；触屏设备点击 Abstract 展开。
+if (window.matchMedia("(hover: hover)").matches) {
+  document.querySelectorAll("ol.pubs li").forEach(li => {
+    const d = li.querySelector("details.abs");
+    if (!d) return;
+    let pinned = false;
+    d.querySelector("summary").addEventListener("click", ev => { ev.preventDefault(); pinned = !pinned; d.open = pinned; });
+    li.addEventListener("mouseenter", () => { d.open = true; });
+    li.addEventListener("mouseleave", () => { if (!pinned) d.open = false; });
+  });
+}
+</script>
 </body>
 </html>

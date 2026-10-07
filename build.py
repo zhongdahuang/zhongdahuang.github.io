@@ -97,6 +97,28 @@ def datacite(doi):
     }
 
 
+def jats_to_text(a):
+    a = re.sub(r"<jats:title>.*?</jats:title>", "", a, flags=re.S)
+    a = re.sub(r"<[^>]+>", " ", a)
+    a = html.unescape(re.sub(r"\s+", " ", a)).strip()
+    return re.sub(r"^(Abstract|ABSTRACT)[:.\s]+", "", a)
+
+
+def get_abstract(doi):
+    try:
+        m = get_json(f"https://api.crossref.org/works/{doi}")["message"]
+        if m.get("abstract"):
+            return jats_to_text(m["abstract"])
+    except Exception:
+        pass
+    try:
+        inv = get_json(f"https://api.openalex.org/works/doi:{doi}").get("abstract_inverted_index") or {}
+        pos = sorted((i, w) for w, idx in inv.items() for i in idx)
+        return " ".join(w for _, w in pos)
+    except Exception:
+        return ""
+
+
 def orcid_papers(orcid):
     works = get_json(f"https://pub.orcid.org/v3.0/{orcid}/works")["group"]
     papers = []
@@ -126,6 +148,7 @@ def orcid_papers(orcid):
             meta["journal"] = f"arXiv:{ids['arxiv']}"
         meta["kind"] = kind
         meta["doi"] = doi
+        meta["abstract"] = get_abstract(doi) if doi else ""
         meta["arxiv"] = ids.get("arxiv")
         papers.append(meta)
     return papers
@@ -174,11 +197,27 @@ def venue(p):
     return f"{j}, {p['year']}." if j else f"{p['year']}."
 
 
+def abstract_block(text):
+    if not text:
+        return ""
+    return f'\n      <details class="abs"><summary>Abstract</summary><p>{html.escape(text)}</p></details>'
+
+
 def paper_li(p):
     links = '<span class="links">' + " ".join(f'<a href="{html.escape(l["url"])}">{html.escape(l["label"])}</a>' for l in p["links"]) + "</span>"
     authors = f'{html.escape(p["authors"])}.<br>\n      ' if p.get("authors") else ""
     return (f'    <li>\n      <span class="title">{clean_title(p["title"])}.</span><br>\n      {authors}'
-            f'<span class="meta">{venue(p)}</span>\n      {links}\n    </li>')
+            f'<span class="meta">{venue(p)}</span>\n      {links}{abstract_block(p.get("abstract"))}\n    </li>')
+
+
+def talk_li(t):
+    tag = '<span class="tag">invited</span>' if t.get("invited") else ""
+    title = f'<span class="title">{html.escape(t["title"])}.</span>{tag}<br>\n      ' if t.get("title") else f"{tag}"
+    when = news_date(t["date"])
+    where = ", ".join(x for x in [t.get("event"), t.get("place")] if x)
+    slides = f' <span class="links"><a href="{html.escape(t["slides"])}">slides</a></span>' if t.get("slides") else ""
+    return (f'    <li>\n      {title}<span class="meta">{html.escape(where)}, {when}.</span>{slides}'
+            f'{abstract_block((t.get("abstract") or "").strip())}\n    </li>')
 
 
 ICONS = {
@@ -207,7 +246,7 @@ def icon_for(link):
 
 
 def news_date(d):
-    d = str(d)
+    d = str(d)[:7]
     if re.fullmatch(r"\d{4}-\d{2}", d):
         return datetime.date(int(d[:4]), int(d[5:]), 1).strftime("%b %Y")
     return d
@@ -234,6 +273,11 @@ def build_html(cfg, papers):
     out = []
     out.append(f'<section id="about">\n  <h2>About</h2>\n  <p>{e(cfg["about"])}</p>\n  <p>{e(cfg["research"])}</p>\n</section>')
     items = [(str(n["date"]), n["text"]) for n in cfg.get("news") or []]
+    for t in cfg.get("talks") or []:
+        what = "Invited talk" if t.get("invited") else "Talk"
+        ttl = f' <i>{e(t["title"])}</i>.' if t.get("title") else ""
+        where = ", ".join(e(x) for x in [t.get("event"), t.get("place")] if x)
+        items.append((str(t["date"])[:7], f'{what}:{ttl} {where}.'))
     for p in papers:
         if p["kind"] == "article" and p.get("month"):
             items.append((f'{p["year"]}-{int(p["month"]):02d}',
@@ -262,7 +306,8 @@ def build_html(cfg, papers):
     ta = "\n".join(f"    <li>{e(x)}</li>" for x in t["assistant"])
     out.append(f'<section id="teaching">\n  <h2>Teaching</h2>\n  <p>{e(t["intro"])}</p>\n\n  <h3>Courses taught</h3>\n  <ol class="pubs">\n{courses}\n  </ol>\n\n'
                f'  <h3>Teaching assistant</h3>\n  <ol class="pubs">\n{ta}\n  </ol>\n</section>')
-    talks = "\n".join(f"    <li>{e(x)}</li>" for x in cfg["talks"])
+    tl = sorted(cfg.get("talks") or [], key=lambda t: str(t["date"]), reverse=True)
+    talks = "\n".join(talk_li(t) for t in tl)
     out.append(f'<section id="talks">\n  <h2>Talks</h2>\n  <ol class="pubs">\n{talks}\n  </ol>\n</section>')
     ed = "\n".join(
         f'    <li><span class="title">{e(x["degree"])}</span>, {e(x["when"])}<br>\n      {e(x["where"])}'
