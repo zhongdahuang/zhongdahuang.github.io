@@ -230,6 +230,7 @@ ICONS = {
     "code": '<svg viewBox="0 0 24 24"><path d="m8 7-5 5 5 5M16 7l5 5-5 5"/></svg>',
     "book": '<svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/></svg>',
     "doc": '<svg viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/></svg>',
+    "person": '<svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20a7 7 0 0 1 14 0"/></svg>',
     "pin": '<svg viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-11a6 6 0 0 1 12 0c0 5.7-6 11-6 11z"/><circle cx="12" cy="10" r="2"/></svg>',
 }
 
@@ -244,6 +245,8 @@ def icon_for(link):
         return ICONS["code"]
     if "scholar" in u:
         return ICONS["book"]
+    if "linkedin" in u:
+        return ICONS["person"]
     if l == "cv" or u.endswith(".pdf"):
         return ICONS["doc"]
     return ICONS["pin"]
