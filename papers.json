@@ -15,6 +15,21 @@
   "arxiv": null
  },
  {
+  "title": "Iterative Image Reconstruction Methodology in Optical CT Radiochromic Gel Dosimetry",
+  "authors": "S. Collins, A. Ogilvy, D. Huang, W. Hare, M. Hilts, A. Jirasek",
+  "journal": "Journal of Physics: Conference Series",
+  "volume": "2630",
+  "issue": "1",
+  "pages": "012033",
+  "number": null,
+  "year": 2023,
+  "month": 11,
+  "kind": "article",
+  "doi": "10.1088/1742-6596/2630/1/012033",
+  "abstract": "Modern advancements in radiation therapy require paralleled advancements in the dosimetric tools used to verify dose distributions. Optical computed tomography (CT) imaged radiochromic gel dosimeters provide comprehensive, tissue equivalent, 3D dosimetric information with high spatial resolution and low imaging times. Traditional CT image reconstruction methods (filtered backprojection) do not account for light refraction within the optical CT system reducing the image quality. Iterative reconstruction methods make use of a system matrix that describes this light refraction thus, improving the reconstructed image quality. However, use of iterative reconstruction methods is not widespread, largely due to the impractical storage size of the required system matrix. Furthermore, current iterative reconstruction methods do not address the issue of image degradation due to a single detector element collecting light from multiple raypaths. For optical CT radiochromic gel dosimetry to be used effectively as a radiation therapy treatment plan verification tool, the system must be both practical and accurate. Thus, this work has two main objectives: (i) reduce the size of system matrices by means of polar coordinate discretization in lieu of the traditional Cartesian coordinate discretization, and (ii) reduce image degradation due to multiple raypaths by a novel approach to populating the system matrix that accounts for multiple raypaths.",
+  "arxiv": null
+ },
+ {
   "title": "Preliminary commissioning of a prototype solid tank optical CT scanner for 3D radiation dosimetry",
   "authors": "A. Ogilvy, S. Collins, M. Guenter, D. Huang, W. Hare, M. Hilts, A. Jirasek",
   "journal": "Journal of Physics: Conference Series",
