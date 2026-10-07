@@ -161,16 +161,36 @@ talks:
     title:        # 待补
     event: CORS 2025 Annual Conference
     place: Edmonton
-  - date: 2022
+  - date: 2022-07-19
     invited: true
-    title:        # 待补
-    event: BIRS workshop on derivative-free optimization
-    place:        # 待补
-  - date: 2022
-    invited: true
-    title:        # 待补
-    event: CAIMS Annual Meeting
+    title: A hybrid direct search and model-based derivative-free optimization method with dynamic decision processing and application
+    event: "BIRS workshop Derivative-Free Optimization: Linking Algorithms and Applications (22w5199)"
     place: UBC Okanagan
+    abstract: >-
+      A derivative-free optimization (DFO) method is a type of optimization method that
+      does not make use of derivative information in order to find the optimal solution.
+      In this talk, we develop the framework for a DFO method, referred to as the smart DQL
+      method. It is designed to be a versatile hybrid method capable of performing direct
+      search, quadratic-model search, and line search all in the same method. The smart DQL
+      method is applied to the problem of solid tank design for 3D radiation dosimetry. We
+      show that, given the same evaluation budget, the smart DQL method produces a
+      higher-quality solution than the Grid Search method that was originally employed by
+      the UBCO 3D Radiation Dosimetry Research Group.
+  - date: 2022-06
+    invited: true
+    title: A hybrid direct search and model-based derivative-free optimization method with dynamic decision processing and application
+    event: CAIMS 2022 Annual Meeting
+    place: UBC Okanagan
+    abstract: >-
+      A derivative-free optimization (DFO) method is a type of optimization method that
+      does not make use of derivative information in order to find the optimal solution.
+      In this talk, we develop the framework for a DFO method, referred to as the smart DQL
+      method. It is designed to be a versatile hybrid method capable of performing direct
+      search, quadratic-model search, and line search all in the same method. The smart DQL
+      method is applied to the problem of solid tank design for 3D radiation dosimetry. We
+      show that, given the same evaluation budget, the smart DQL method produces a
+      higher-quality solution than the Grid Search method that was originally employed by
+      the UBCO 3D Radiation Dosimetry Research Group.
 
 outside:
   image: outside.jpg
