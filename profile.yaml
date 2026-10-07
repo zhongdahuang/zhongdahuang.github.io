@@ -166,9 +166,24 @@ talks:
       indicates that the NSGA-II-ws method achieves higher-quality solutions within a
       comparable runtime to the standard NSGA-II approach.
   - date: 2025-06
-    title:        # 待补
+    title: A multiobjective optimization approach for solid tank design problem
     event: CORS 2025 Annual Conference
     place: Edmonton
+    abstract: >-
+      Designing the solid tank of fan-beam optical scanners for three-dimensional radiation
+      dosimeters involves optimizing scanning coverage and image uniformity simultaneously.
+      Prior single-objective methods merge these performance measures into a single
+      objective, risking convergence to a solitary solution while overlooking vital solution
+      diversity and correlations. To address this, we employ a multiobjective optimization
+      approach that retains Pareto-optimal solutions in the design space by using NSGA-II
+      method. This approach not only captures critical compromises between effective scanning
+      coverage and image uniformity but also facilitates a thorough exploration of possible
+      configurations. By preserving a broad spectrum of high-quality solutions, our method
+      illustrates the advantages of a multiobjective framework in revealing deeper insights
+      into design trade-offs, avoiding biased outcomes, and supporting robust lens selection.
+      Furthermore, when applied to conical lens geometries, the algorithm identifies
+      limitations in attaining the ideal design, prompting the development of polynomial and
+      aspheric lenses that deliver superior overall performance.
   - date: 2022-07-19
     invited: true
     title: A hybrid direct search and model-based derivative-free optimization method with dynamic decision processing and application
