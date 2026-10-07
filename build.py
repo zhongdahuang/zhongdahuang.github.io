@@ -215,8 +215,12 @@ def talk_li(t):
     title = f'<span class="title">{html.escape(t["title"])}.</span>{tag}<br>\n      ' if t.get("title") else f"{tag}"
     when = news_date(t["date"])
     where = ", ".join(x for x in [t.get("event"), t.get("place")] if x)
-    slides = f' <span class="links"><a href="{html.escape(t["slides"])}">slides</a></span>' if t.get("slides") else ""
-    return (f'    <li>\n      {title}<span class="meta">{html.escape(where)}, {when}.</span>{slides}'
+    links = t.get("links") or []
+    if t.get("slides"):
+        links = [{"label": "slides", "url": t["slides"]}] + links
+    lk = (' <span class="links">' + " ".join(f'<a href="{html.escape(l["url"])}">{html.escape(l["label"])}</a>' for l in links) + "</span>") if links else ""
+    authors = f'{html.escape(t["authors"])}.<br>\n      ' if t.get("authors") else ""
+    return (f'    <li>\n      {title}{authors}<span class="meta">{html.escape(where)}, {when}.</span>{lk}'
             f'{abstract_block((t.get("abstract") or "").strip())}\n    </li>')
 
 

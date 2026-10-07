@@ -143,7 +143,7 @@ footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--rule);
 <section id="news">
   <h2>News</h2>
   <ul class="news">
-    <li><time>Jun 2026</time><span>Invited talk: <i>Multi-fidelity warm-start optimization: theory and application</i>. Third Derivative-Free Optimization Symposium (DFOS 2026), Université de Montréal.</span></li>
+    <li><time>Jun 2026</time><span>Invited talk: <i>Multiobjective multifidelity derivative-free optimization for optical CT scanner design: from empirical warm-starts to convergence-guided fidelity scheduling</i>. Third Derivative-Free Optimization Symposium (DFOS 2026), Université de Montréal.</span></li>
     <li><time>May 2026</time><span>Published in <i>Engineering Optimization</i>: A multiobjective multifidelity optimization approach for the design of scanners for use in optical computed tomography imaging.</span></li>
     <li><time>Oct 2025</time><span>Talk: <i>A multiobjective multifidelity optimization approach for design of scanners for use in optical CT imaging</i>. West Coast Optimization Meeting (WCOM Fall 2025), UBC Okanagan.</span></li>
     <li><time>Jun 2025</time><span>Talk: CORS 2025 Annual Conference, Edmonton.</span></li>
@@ -224,13 +224,15 @@ footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--rule);
   <h2>Talks</h2>
   <ol class="pubs">
     <li>
-      <span class="title">Multi-fidelity warm-start optimization: theory and application.</span><span class="tag">invited</span><br>
-      <span class="meta">Third Derivative-Free Optimization Symposium (DFOS 2026), Université de Montréal, Jun 2026.</span>
+      <span class="title">Multiobjective multifidelity derivative-free optimization for optical CT scanner design: from empirical warm-starts to convergence-guided fidelity scheduling.</span><span class="tag">invited</span><br>
+      Z. Huang, J. Ryga, A. Ogilvy, A. Ardestani-Jaafari, A. Jirasek, W. Hare.<br>
+      <span class="meta">Third Derivative-Free Optimization Symposium (DFOS 2026), Université de Montréal, Jun 2026.</span> <span class="links"><a href="https://github.com/zhongdahuang/MO-STD">code</a></span>
       <details class="abs"><summary>Abstract</summary><p>Optical computed tomography (CT) scanners are powerful imaging tools used in three-dimensional radiation dosimetry to reconstruct dose distributions in gel dosimeters. Solid-tank scanners embed the gel in an acrylic block, replacing large fluid baths and simplifying setup. We formulate solid-tank fan-beam design as a multiobjective problem balancing imaging extent, uniformity, and ray-crossover artifacts. We build a ray-tracing simulator with objective-specific performance measures and a multifidelity setting controlled by ray count. To search efficiently, we employ the Non-dominated Sorting Genetic Algorithm (NSGA-II-ws) within a multifidelity framework that incrementally escalates simulation fidelity and uses Pareto-optimal survivors from one level to initialize the next. Performance comparisons indicate that NSGA-II-ws achieves higher-quality solutions within comparable runtime to standard NSGA-II. Motivated by this framework, we develop a theoretical foundation for multi-fidelity warm-start optimization under smooth and strongly convex objectives. For the two-level setting, we establish iteration bounds quantifying how low-fidelity progress reduces high-fidelity complexity and characterize the optimal allocation of iterations between fidelity levels, including closed-form cost-minimizing splits. We extend the analysis to M-level hierarchies, formalizing when and why multi-fidelity warm-start strategies yield computational savings and providing guidance for designing provably efficient multi-fidelity optimization frameworks.</p></details>
     </li>
     <li>
       <span class="title">A multiobjective multifidelity optimization approach for design of scanners for use in optical CT imaging.</span><br>
-      <span class="meta">West Coast Optimization Meeting (WCOM Fall 2025), UBC Okanagan, Oct 2025.</span>
+      Z. Huang, J. Ryga, A. Ogilvy, A. Ardestani-Jaafari, A. Jirasek, W. Hare.<br>
+      <span class="meta">West Coast Optimization Meeting (WCOM Fall 2025), UBC Okanagan, Oct 2025.</span> <span class="links"><a href="https://github.com/zhongdahuang/MO-STD">code</a></span>
       <details class="abs"><summary>Abstract</summary><p>Optical computed tomography (CT) scanners are powerful imaging tools used in three dimensional radiation dosimetry to reconstruct dose distributions in gel dosimeters. Solid-tank scanners embed the gel in an acrylic block, replacing large fluid baths and simplifying setup. We formulate solid-tank, fan-beam design as a multiobjective problem balancing imaging extent, uniformity, and ray-crossover artifacts. We build a ray-tracing simulator with new, objective-specific performance measures and a multifidelity setting controlled by ray count. To search efficiently, we employ a warm-start Non-dominated Sorting Genetic Algorithm (NSGA-II-ws), which incrementally escalates simulation fidelity and uses the Pareto-optimal survivors from one fidelity stage to initialize the population at the next. Our method illustrates the advantages of a multiobjective framework to reveal deeper insights into design trade-offs, avoid biased outcomes, and support robust lens selection. Moreover, performance comparison indicates that the NSGA-II-ws method achieves higher-quality solutions within a comparable runtime to the standard NSGA-II approach.</p></details>
     </li>
     <li>
@@ -280,18 +282,5 @@ footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--rule);
 <footer><span class="mcredit">Header image: Detail of <a href="https://vincentslight.art/products/okanagan-lake-in-moonlight"><i>Okanagan Lake in Moonlight</i></a>, acrylic on canvas, by the author.</span>Last updated October 2026. Publications are drawn from <a href="https://orcid.org/0009-0005-7613-5838">ORCID</a>.</footer>
 </main>
 </div>
-<script>
-// 鼠标悬停在条目上时展开摘要，移开时收起；触屏设备点击 Abstract 展开。
-if (window.matchMedia("(hover: hover)").matches) {
-  document.querySelectorAll("ol.pubs li").forEach(li => {
-    const d = li.querySelector("details.abs");
-    if (!d) return;
-    let pinned = false;
-    d.querySelector("summary").addEventListener("click", ev => { ev.preventDefault(); pinned = !pinned; d.open = pinned; });
-    li.addEventListener("mouseenter", () => { d.open = true; });
-    li.addEventListener("mouseleave", () => { if (!pinned) d.open = false; });
-  });
-}
-</script>
 </body>
 </html>

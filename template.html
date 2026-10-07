@@ -121,18 +121,5 @@ footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--rule);
 <footer><span class="mcredit">Header image: {{BANNER_CREDIT}}.</span>Last updated {{UPDATED}}. Publications are drawn from <a href="https://orcid.org/{{ORCID}}">ORCID</a>.</footer>
 </main>
 </div>
-<script>
-// 鼠标悬停在条目上时展开摘要，移开时收起；触屏设备点击 Abstract 展开。
-if (window.matchMedia("(hover: hover)").matches) {
-  document.querySelectorAll("ol.pubs li").forEach(li => {
-    const d = li.querySelector("details.abs");
-    if (!d) return;
-    let pinned = false;
-    d.querySelector("summary").addEventListener("click", ev => { ev.preventDefault(); pinned = !pinned; d.open = pinned; });
-    li.addEventListener("mouseenter", () => { d.open = true; });
-    li.addEventListener("mouseleave", () => { if (!pinned) d.open = false; });
-  });
-}
-</script>
 </body>
 </html>

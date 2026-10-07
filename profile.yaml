@@ -114,9 +114,13 @@ awards:
 talks:
   - date: 2026-06-23
     invited: true
-    title: "Multi-fidelity warm-start optimization: theory and application"
+    title: "Multiobjective multifidelity derivative-free optimization for optical CT scanner design: from empirical warm-starts to convergence-guided fidelity scheduling"
+    authors: Z. Huang, J. Ryga, A. Ogilvy, A. Ardestani-Jaafari, A. Jirasek, W. Hare
     event: Third Derivative-Free Optimization Symposium (DFOS 2026)
     place: Université de Montréal
+    links:
+      - label: code
+        url: https://github.com/zhongdahuang/MO-STD
     abstract: >-
       Optical computed tomography (CT) scanners are powerful imaging tools used in
       three-dimensional radiation dosimetry to reconstruct dose distributions in gel
@@ -140,8 +144,12 @@ talks:
       guidance for designing provably efficient multi-fidelity optimization frameworks.
   - date: 2025-10-18
     title: A multiobjective multifidelity optimization approach for design of scanners for use in optical CT imaging
+    authors: Z. Huang, J. Ryga, A. Ogilvy, A. Ardestani-Jaafari, A. Jirasek, W. Hare
     event: West Coast Optimization Meeting (WCOM Fall 2025)
     place: UBC Okanagan
+    links:
+      - label: code
+        url: https://github.com/zhongdahuang/MO-STD
     abstract: >-
       Optical computed tomography (CT) scanners are powerful imaging tools used in three
       dimensional radiation dosimetry to reconstruct dose distributions in gel dosimeters.
