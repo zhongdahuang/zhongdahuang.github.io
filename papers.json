@@ -1,0 +1,72 @@
+[
+ {
+  "title": "A multiobjective multifidelity optimization approach for the design of scanners for use in optical computed tomography imaging",
+  "authors": "Z. Huang, J. Ryga, A. Ogilvy, A. Ardestani-Jaafari, A. Jirasek, W. Hare",
+  "journal": "Engineering Optimization",
+  "volume": null,
+  "issue": null,
+  "pages": null,
+  "number": null,
+  "year": 2026,
+  "month": 5,
+  "kind": "article",
+  "doi": "10.1080/0305215x.2026.2671223",
+  "arxiv": null
+ },
+ {
+  "title": "Preliminary commissioning of a prototype solid tank optical CT scanner for 3D radiation dosimetry",
+  "authors": "A. Ogilvy, S. Collins, M. Guenter, D. Huang, W. Hare, M. Hilts, A. Jirasek",
+  "journal": "Journal of Physics: Conference Series",
+  "volume": "2630",
+  "issue": "1",
+  "pages": "012036",
+  "number": null,
+  "year": 2023,
+  "month": 11,
+  "kind": "article",
+  "doi": "10.1088/1742-6596/2630/1/012036",
+  "arxiv": null
+ },
+ {
+  "title": "Iterative image reconstruction with polar coordinate discretized system matrix for optical CT radiochromic gel dosimetry",
+  "authors": "S. Collins, A. Ogilvy, D. Huang, W. Hare, M. Hilts, A. Jirasek",
+  "journal": "Medical Physics",
+  "volume": "50",
+  "issue": "10",
+  "pages": "6334-6353",
+  "number": null,
+  "year": 2023,
+  "month": 5,
+  "kind": "article",
+  "doi": "10.1002/mp.16459",
+  "arxiv": null
+ },
+ {
+  "title": "A Hybrid Direct Search and Model-Based Derivative-Free Optimization Method with Dynamic Decision Processing and Application in Solid-Tank Design",
+  "authors": "Z. Huang, A. Ogilvy, S. Collins, W. Hare, M. Hilts, A. Jirasek",
+  "journal": "Algorithms",
+  "volume": "16",
+  "issue": "2",
+  "pages": "92",
+  "number": null,
+  "year": 2023,
+  "month": 2,
+  "kind": "article",
+  "doi": "10.3390/a16020092",
+  "arxiv": null
+ },
+ {
+  "title": "The superconducting transition and mixed state of YBa<sub>2</sub>Cu<sub>3</sub>O<sub>6.95</sub>: an undergraduate experiment",
+  "authors": "Z. Huang, Y. Tong, J. S. Bobowski",
+  "journal": "European Journal of Physics",
+  "volume": "43",
+  "issue": "2",
+  "pages": "025501",
+  "number": null,
+  "year": 2022,
+  "month": 12,
+  "kind": "article",
+  "doi": "10.1088/1361-6404/ac405f",
+  "arxiv": null
+ }
+]

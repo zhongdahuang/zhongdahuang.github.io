@@ -1,0 +1,126 @@
+# Zhongda Huang 的个人资料：主页与 GitHub 个人页的唯一来源。
+# 论文从 ORCID 自动拉取；这里只写 ORCID 上没有的条目（如投稿中的稿件）。
+# 改完运行 python build.py，或推送到 GitHub 由 Actions 自动生成。
+
+name: Zhongda Huang
+role:
+  - PhD student, Department of Mathematics
+  - University of British Columbia, Okanagan campus
+orcid: 0009-0005-7613-5838
+
+links:
+  - label: dominic.huang@ubc.ca
+    url: mailto:dominic.huang@ubc.ca
+  - label: ORCID
+    url: https://orcid.org/0009-0005-7613-5838
+  # - label: Google Scholar
+  #   url: https://scholar.google.com/citations?user=XXXX
+  - label: GitHub
+    url: https://github.com/zhongdahuang
+  # - label: CV
+  #   url: cv.pdf
+
+homepage: https://zhongdahuang.github.io
+
+# 头像：直接用 GitHub 头像，GitHub 换头像后主页自动跟着换；position 调整圆形裁剪的取景
+photo: https://github.com/zhongdahuang.png?size=300
+photo_position: 100% 4%   # 放大时固定的点（这里是右上角，保证头顶不被裁）
+photo_zoom: 1.4            # 放大倍数，1 为原图
+
+# 头图：自己的画作（hero.jpg）。credit 显示在头图右下角
+banner:
+  image: hero.jpg
+  alt: Detail of the painting Okanagan Lake in Moonlight
+  credit: 'Detail of <a href="https://vincentslight.art/products/okanagan-lake-in-moonlight"><i>Okanagan Lake in Moonlight</i></a>, acrylic on canvas, by the author'
+
+# 近期动态：只写报告、获奖等；已发表的论文由脚本按 ORCID 自动加入（取发表年月）。
+# 新的写在最上面；date 写 YYYY-MM。显示最近 news_months 个月内的条目。
+news_months: 24
+news:
+  - date: 2026-06
+    text: Invited talk at the Third Derivative-Free Optimization Symposium (DFOS 2026), Université de Montréal.
+  - date: 2025-10
+    text: Talk at the West Coast Optimization Meeting (WCOM Fall 2025), UBC Okanagan.
+  - date: 2025-06
+    text: Talk at the CORS 2025 Annual Conference, Edmonton.
+
+about: >-
+  I am a PhD student in mathematics at UBC Okanagan, advised by Warren Hare and
+  Amir Ardestani-Jaafari.
+
+research: >-
+  I study optimization problems in which each function evaluation is expensive,
+  such as a simulation of a scanner design or a gradient computed over a large
+  dataset. Cheaper approximations of these problems are often available, but the
+  work spent on them must be justified by the saving on the original problem.
+  I develop derivative-free and multi-fidelity methods that decide how to use such
+  approximations, analyze their convergence, and apply them to engineering design
+  and epidemiological modelling.
+
+# 一句话版本，用于 GitHub 个人页
+short_bio: >-
+  PhD student in Mathematics at UBC Okanagan. I study derivative-free and
+  multi-fidelity optimization for problems in which each evaluation is expensive.
+
+# ORCID 上还没有的论文。ORCID 出现同名条目后，这里的条目自动隐藏（code 链接会合并过去）。
+extra_papers:
+  - title: Cost-aware iteration allocation for sequential multi-fidelity first-order optimization
+    authors: A. Ardestani-Jaafari, W. Hare, Z. Huang
+    venue: Submitted
+    year: 2026
+    links:
+      - label: code
+        url: https://github.com/zhongdahuang/multifidelity-warmstart
+
+# 按标题（小写、去标点）给 ORCID 论文追加链接
+paper_links:
+  cost aware iteration allocation for sequential multi fidelity first order optimization:
+    - label: code
+      url: https://github.com/zhongdahuang/multifidelity-warmstart
+
+teaching:
+  intro: >-
+    I have taught mathematics for seven years, including complete courses at UBC
+    Okanagan and Okanagan College. In lectures I explain the reasoning behind each
+    method before students practise it. I write assignments at three levels,
+    foundational, application and extension, so that students with different
+    preparation can all make progress.
+  courses:
+    - where: UBC Okanagan
+      role: sessional lecturer, 2022–2024
+      what: MATH 100 Differential Calculus (3 sections); MATH 200 Calculus III.
+    - where: Okanagan College
+      role: college professor (term), 2023–2024
+      what: MATH 114 Business Mathematics; MATH 120 Pre-Calculus; labs for MATH 112 Calculus I, MATH 122 Calculus II and STAT 124 Business Statistics.
+  assistant:
+    - MATH 200 Calculus III labs, UBC Okanagan, 2024–present.
+    - First-year physics labs (PHYS 111, 112, 121), UBC Okanagan, 2019–2022 and Fall 2025.
+
+education:
+  - degree: PhD, Mathematics
+    when: 2024–2028 (expected)
+    where: University of British Columbia, Okanagan campus
+    note: Derivative-free and multi-fidelity optimization. Supervisors Warren Hare and Amir Ardestani-Jaafari.
+  - degree: MSc, Mathematics
+    when: 2020–2022
+    where: University of British Columbia, Okanagan campus
+    note: "Thesis: a hybrid direct-search and model-based derivative-free optimization method. Supervisor Warren Hare."
+  - degree: BSc, Physics and Mathematics
+    when: 2017–2020
+    where: University of British Columbia, Okanagan campus
+
+awards:
+  - UBC Okanagan Graduate Research Scholarship, 2025.
+  - University Graduate Fellowship, 2021 and 2022.
+  - Special UBC Okanagan Graduate Award, 2021.
+  - Graduate Dean's Entrance Scholarship, 2020.
+
+talks:
+  - "Invited: Derivative-Free Optimization Symposium (DFOS), 2026; BIRS workshop on derivative-free optimization, 2022; CAIMS Annual Meeting, 2022."
+  - "Contributed: CORS Annual Conference, 2025; West Coast Optimization Meeting, 2025."
+
+outside:
+  image: outside.jpg
+  text: >-
+    I also paint, mostly landscapes of the Okanagan in acrylic. My paintings are
+    shown at <a href="https://vincentslight.art">Vincent's Light Fine Art Studio</a>.

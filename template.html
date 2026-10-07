@@ -1,0 +1,114 @@
+<!-- 由 build.py 使用；页面内容改 profile.yaml，不要直接改 index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{NAME}}</title>
+<meta name="description" content="{{DESC}}">
+<link rel="me" href="https://orcid.org/{{ORCID}}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #faf8f3; --panel: #f2eee4; --fg: #1f2329; --muted: #5d6169; --rule: #ddd6c6;
+  --accent: #24406e; --warm: #b07a26; --link: #24406e;
+  --serif: "Source Serif 4", Charter, Georgia, serif;
+  --sans: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #14171c; --panel: #1b1f26; --fg: #e8e5de; --muted: #a3a6ad; --rule: #2e333c;
+          --accent: #9db8e6; --warm: #d9a65a; --link: #9db8e6; }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 17.5px/1.65 var(--serif); }
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+.hero { position: relative; min-height: 440px; display: flex; align-items: flex-end;
+        background: #0e1c38 url("hero.jpg") 50% 4% / cover no-repeat; color: #fff; }
+.hero::before { content: ""; position: absolute; inset: 0;
+        background: linear-gradient(0deg, rgba(7,14,32,.78) 0%, rgba(7,14,32,.35) 32%, rgba(7,14,32,0) 55%),
+                    linear-gradient(90deg, rgba(7,14,32,.35) 0%, rgba(7,14,32,0) 50%); }
+.hero-in { position: relative; width: 100%; max-width: 68rem; margin: 0 auto; padding: 0 1.5rem 2.2rem;
+        display: flex; align-items: center; gap: 1.6rem; }
+.hero h1 { font: 600 2.6rem/1.1 var(--serif); margin: 0 0 .45rem; letter-spacing: -.01em; }
+.hero .role { margin: 0; font-size: 1.02rem; line-height: 1.5; color: rgba(255,255,255,.86); }
+.hero .credit { position: absolute; right: 1.2rem; bottom: .7rem; font: 12px/1.3 var(--sans); color: rgba(255,255,255,.7); }
+.hero .credit a { color: rgba(255,255,255,.85); }
+
+.wrap { max-width: 68rem; margin: 0 auto; padding: 2.6rem 1.5rem 4rem;
+        display: grid; grid-template-columns: 17rem 1fr; gap: 3.5rem; }
+
+aside { position: sticky; top: 1.5rem; align-self: start; }
+.photo { width: 116px; height: 116px; border-radius: 50%; object-fit: cover; display: block; flex: none;
+         border: 3px solid rgba(255,255,255,.85); box-shadow: 0 2px 10px rgba(0,0,0,.35); overflow: hidden; }
+.photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.mono { display: grid; place-items: center; color: #fff; background: #24406e; font: 600 38px/1 var(--serif); letter-spacing: .02em; }
+aside ul { list-style: none; margin: 0; padding: 0; font: 14px/1.5 var(--sans); }
+aside li { margin: 0 0 .45rem; display: flex; gap: .55rem; align-items: center; }
+aside li svg { width: 16px; height: 16px; flex: none; stroke: var(--warm); fill: none; stroke-width: 1.6; }
+aside .toc { margin-top: 1.4rem; border-top: 1px solid var(--rule); padding-top: 1rem; }
+aside .toc a { color: var(--muted); }
+
+main { min-width: 0; }
+section { margin: 0 0 2.8rem; scroll-margin-top: 1.5rem; }
+h2 { font: 600 .78rem/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--accent);
+     margin: 0 0 1.1rem; display: flex; align-items: center; gap: .8rem; }
+h2::after { content: ""; flex: 1; height: 1px; background: var(--rule); }
+h3 { font: 600 .95rem/1.4 var(--sans); margin: 1.6rem 0 .8rem; }
+p { margin: 0 0 1rem; }
+
+.news { list-style: none; margin: 0; padding: 0; }
+.news li { display: grid; grid-template-columns: 5.2rem 1fr; gap: 1rem; padding: .45rem 0; border-bottom: 1px dashed var(--rule); }
+.news li:last-child { border-bottom: 0; }
+.news time { font: 500 13px/1.9 var(--sans); color: var(--warm); white-space: nowrap; }
+
+ol.pubs { list-style: none; padding: 0; margin: 0; }
+ol.pubs li { margin: 0 0 1.15rem; padding-left: .9rem; border-left: 2px solid var(--rule); }
+ol.pubs li:hover { border-left-color: var(--warm); }
+.title { font-weight: 600; }
+.meta { color: var(--muted); font-size: .93em; }
+.links a { font: 500 12.5px/1 var(--sans); border: 1px solid var(--rule); border-radius: 999px; padding: 3px 9px; margin-right: .3rem; }
+.links a:hover { border-color: var(--accent); text-decoration: none; }
+
+.outside { background: var(--panel); border-radius: 6px; padding: 1.1rem 1.3rem; display: flex; gap: 1.1rem; align-items: center; }
+.outside img { width: 92px; height: 92px; object-fit: cover; border-radius: 4px; flex: none; }
+.outside p { margin: 0; }
+
+.mcredit { display: none; }
+footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--rule); font: 13px/1.5 var(--sans); color: var(--muted); }
+
+@media (max-width: 860px) {
+  .hero { min-height: 360px; background-position: 40% 4%; }
+  .hero-in { flex-direction: column; align-items: flex-start; gap: .9rem; padding: 0 16px 1.6rem; }
+  .hero h1 { font-size: 2rem; }
+  .hero .credit { display: none; }
+  .mcredit { display: block; }
+  .wrap { grid-template-columns: 1fr; gap: 1.6rem; padding: 1.6rem 16px 3rem; }
+  aside { position: static; }
+  aside .toc { display: none; }
+  .news li { grid-template-columns: 4.6rem 1fr; gap: .7rem; }
+}
+</style>
+</head>
+<body>
+<header class="hero" role="banner" aria-label="{{BANNER_ALT}}">
+  <div class="hero-in">
+{{HERO}}
+  </div>
+  <span class="credit">{{BANNER_CREDIT}}</span>
+</header>
+<div class="wrap">
+<aside>
+{{SIDEBAR}}
+</aside>
+<main>
+{{MAIN}}
+<footer><span class="mcredit">Header image: {{BANNER_CREDIT}}.</span>Last updated {{UPDATED}}. Publications are drawn from <a href="https://orcid.org/{{ORCID}}">ORCID</a>.</footer>
+</main>
+</div>
+</body>
+</html>
