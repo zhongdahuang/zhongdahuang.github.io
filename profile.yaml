@@ -13,8 +13,8 @@ links:
     url: mailto:dominic.huang@ubc.ca
   - label: ORCID
     url: https://orcid.org/0009-0005-7613-5838
-  # - label: Google Scholar
-  #   url: https://scholar.google.com/citations?user=XXXX
+  - label: Google Scholar
+    url: https://scholar.google.com/citations?user=bhUggisAAAAJ
   - label: GitHub
     url: https://github.com/zhongdahuang
   # - label: CV
