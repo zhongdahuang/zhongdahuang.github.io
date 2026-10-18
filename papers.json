@@ -15,6 +15,16 @@
   "arxiv": null
  },
  {
+  "title": "Cost-Aware Iteration Allocation for Sequential Multi-Fidelity First-Order Optimization",
+  "authors": "A. Ardestani-Jaafari, W. Hare, Z. Huang",
+  "journal": "arXiv",
+  "year": 2026,
+  "kind": "preprint",
+  "doi": "10.48550/ARXIV.2610.14295",
+  "abstract": "Optimization can be expensive when evaluating the objective and its gradient requires a large dataset or a costly simulation. A cheaper approximation (i.e., a surrogate) can provide a useful initial point, but the work spent on that surrogate must be justified by the saving on the original problem. We study how many iterations to perform on each surrogate before switching to a more accurate objective. For a given sequence of smooth, strongly convex objectives, we use convergence bounds and distances between minimizers to construct a model of the total iteration cost. We derive closed-form two-level budgets for Nesterov's accelerated gradient method and a convex reformulation for multiple levels. We also develop an online switching rule that updates the cost comparison using the gradient at the current point. We test the techniques on a logistic-regression problem using HIGGS data. The online rule reduces weighted iteration cost in all 27 tested configurations, with a median cost of 52.8% of direct optimization. The results illustrate why updating the switching decision can be more effective than fixing the budget from an initial convergence bound.",
+  "arxiv": null
+ },
+ {
   "title": "Iterative Image Reconstruction Methodology in Optical CT Radiochromic Gel Dosimetry",
   "authors": "S. Collins, A. Ogilvy, D. Huang, W. Hare, M. Hilts, A. Jirasek",
   "journal": "Journal of Physics: Conference Series",

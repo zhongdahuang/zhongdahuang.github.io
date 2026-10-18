@@ -157,10 +157,11 @@ footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--rule);
   <h3>Preprints and submitted</h3>
   <ol class="pubs">
     <li>
-      <span class="title">Cost-aware iteration allocation for sequential multi-fidelity first-order optimization.</span><br>
+      <span class="title">Cost-Aware Iteration Allocation for Sequential Multi-Fidelity First-Order Optimization.</span><br>
       A. Ardestani-Jaafari, W. Hare, Z. Huang.<br>
-      <span class="meta">Submitted, 2026.</span>
-      <span class="links"><a href="https://github.com/zhongdahuang/multifidelity-warmstart">code</a></span>
+      <span class="meta"><i>arXiv</i>, 2026.</span>
+      <span class="links"><a href="https://doi.org/10.48550/ARXIV.2610.14295">doi</a> <a href="https://github.com/zhongdahuang/multifidelity-warmstart">code</a></span>
+      <details class="abs"><summary>Abstract</summary><p>Optimization can be expensive when evaluating the objective and its gradient requires a large dataset or a costly simulation. A cheaper approximation (i.e., a surrogate) can provide a useful initial point, but the work spent on that surrogate must be justified by the saving on the original problem. We study how many iterations to perform on each surrogate before switching to a more accurate objective. For a given sequence of smooth, strongly convex objectives, we use convergence bounds and distances between minimizers to construct a model of the total iteration cost. We derive closed-form two-level budgets for Nesterov&#x27;s accelerated gradient method and a convex reformulation for multiple levels. We also develop an online switching rule that updates the cost comparison using the gradient at the current point. We test the techniques on a logistic-regression problem using HIGGS data. The online rule reduces weighted iteration cost in all 27 tested configurations, with a median cost of 52.8% of direct optimization. The results illustrate why updating the switching decision can be more effective than fixing the budget from an initial convergence bound.</p></details>
     </li>
   </ol>
   <h3>Journal articles</h3>
