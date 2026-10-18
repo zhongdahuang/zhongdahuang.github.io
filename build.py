@@ -19,7 +19,7 @@ from pathlib import Path
 import yaml
 
 HERE = Path(__file__).resolve().parent
-UA = "zhongdahuang-homepage-build (mailto:dominic.huang@ubc.ca)"
+UA = "zhongdahuang-homepage-build (mailto:zhongda.huang@ubc.ca)"
 
 
 def get_json(url, accept="application/json"):
